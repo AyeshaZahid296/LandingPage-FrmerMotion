@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+/* Neighbor local font */
+@font-face {
+    font-family: "Neighbor";
+    src: url("/fonts/Neighbor/fonnts.com-Neighbor_Regular.otf") format("opentype");
+
+}
+
+@font-face {
+    font-family: "Neighbor";
+    src: url("/fonts/Neighbor/fonnts.com-Neighbor_Medium.otf") format("opentype");
+
+}
+
+@font-face {
+    font-family: "Neighbor";
+    src: url("/fonts/Neighbor/fonnts.com-Neighbor_Bold.otf") format("opentype");
+
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+
+.marquee-content {
+    animation: scroll-left 25s linear infinite;
+    width: max-content;
+}
+
+:root {
+    /* Viewport boundaries for fluid scaling */
+    --site--viewport-min: 320;
+    --site--viewport-max: 1280;
+
+    /* Font trims */
+    --_typography---font--primary-trim-top: .4em;
+    --_typography---font--primary-trim-bottom: .37em;
+    --_typography---font--secondary-trim-top: .38em;
+    --_typography---font--secondary-trim-bottom: .36em;
+
+    /* Fluid font sizes */
+    --_typography---font-size--display: clamp(4rem, ((4 - ((7 - 4) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((7 - 4) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 7rem);
+    --_typography---font-size--h1: clamp(3rem, ((3 - ((4.5 - 3) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.5 - 3) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 4.5rem);
+    --_typography---font-size--h2: clamp(2.5rem, ((2.5 - ((4 - 2.5) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4 - 2.5) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 4rem);
+    --_typography---font-size--h3: clamp(2rem, ((2 - ((3 - 2) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 3rem);
+    --_typography---font-size--h4: clamp(1.75rem, ((1.75 - ((2 - 1.75) / (var(--site--viewport-max) - var(--site--viewport-min))) * var(--site--viewport-min)) * 1rem + ((2 - 1.75) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 2rem);
+    --_typography---font-size--h5: clamp(1.375rem, ((1.375 - ((1.5 - 1.375) / (var(--site--viewport-max) - var(--site--viewport-min))) * var(--site--viewport-min)) * 1rem + ((1.5 - 1.375) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 1.5rem);
+    --_typography---font-size--text-small: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 1 * 1rem);
+    --_typography---font-size--text-main: clamp(1 * 1rem, ((1 - ((1.125 - 1) / (var(--site--viewport-max) - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.125 - 1) / (var(--site--viewport-max) - var(--site--viewport-min))) * 100vw), 1.125 * 1rem);
+    /* Letter spacing */
+    --_typography---letter-spacing--normal: 0em;
+    --_typography---letter-spacing--tight: -0.03em;
+
+    /* Line heights */
+    --_typography---line-height--small: 1;
+    --_typography---line-height--medium: 1.1;
+    --_typography---line-height--large: 1.3;
+    --_typography---line-height--huge: 1.5;
+}
+
+/* ---------- TYPOGRAPHY CLASSES ---------- */
+
+/* Display */
+.display {
+    font-size: var(--_typography---font-size--display);
+}
+
+/* Headings */
+.h1 {
+    font-size: var(--_typography---font-size--h1);
+}
+
+.h2 {
+    font-size: var(--_typography---font-size--h2);
+}
+
+.h3 {
+    font-size: var(--_typography---font-size--h3);
+}
+
+.h4 {
+    font-size: var(--_typography---font-size--h4);
+}
+
+.h5 {
+    font-size: var(--_typography---font-size--h5);
+}
+
+.main {
+    font-size: var(--_typography---font-size--text-main);
+}
+
+.small {
+    font-size: var(--_typography---font-size--text-small);
+}
+
+/* ---------- LETTER SPACING UTILITIES ---------- */
+.ls-normal {
+    letter-spacing: var(--_typography---letter-spacing--normal);
+}
+
+.ls-tight {
+    letter-spacing: var(--_typography---letter-spacing--tight);
+}
+
+/* ---------- LINE HEIGHT UTILITIES ---------- */
+.lh-small {
+    line-height: var(--_typography---line-height--small);
+}
+
+.lh-medium {
+    line-height: var(--_typography---line-height--medium);
+}
+
+.lh-large {
+    line-height: var(--_typography---line-height--large);
+}
+
+.lh-huge {
+    line-height: var(--_typography---line-height--huge);
+}
+
+.btn-box {
+    grid-column-gap: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (90 - 20) * 20)) * 1rem + ((.75 - .625) / (90 - 20)) * 100vw), .75 * 1rem);
+    grid-row-gap: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (90 - 20) * 20)) * 1rem + ((.75 - .625) / (90 - 20)) * 100vw), .75 * 1rem);
+}
